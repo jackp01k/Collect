@@ -73,6 +73,19 @@ public class Driver {
 		
 		//lets try to print them
 		
+		//remember the order names were added:
+		System.out.println("This is the original order:");
+		k = 1;
+		for(String s : myNames) {
+			System.out.println(k + ". " + s);
+			k++;
+		}
+		
+		System.out.println("Here is the hashmap:");
+		System.out.println(jackHash.values());
+		
+		System.out.println("Here is the treemap:");
+		System.out.println(jackTree.values());
 		
 	}
 
