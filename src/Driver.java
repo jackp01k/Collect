@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class Driver {
 	
@@ -52,7 +53,25 @@ public class Driver {
 		//hashmap
 		HashMap<Integer, String> jackHash = new HashMap<Integer, String>();
 		//populate hashmap
+		String[] myNames = {"Jack", "Brent", "Ethan", "Levi"};
+		int k = 1;
+		for(String s : myNames) {
+			jackHash.put(k, s);
+			k++;
+		}
 		
+		//treemap
+		TreeMap<Integer, String> jackTree = new TreeMap<Integer, String>();
+		//populate treemap
+		k = 1;
+		for(String s : myNames) {
+			jackTree.put(k, s);
+			k++;
+		}
+		
+		//now we have idenitical hashmap and treemap.
+		
+		//lets try to print them
 		
 		
 	}
