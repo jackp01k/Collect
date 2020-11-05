@@ -121,7 +121,8 @@ public class Driver {
 		}
 		
 		
-		System.out.println("\nTo guarantee order, use a TreeSet");
+		System.out.println("\nTo guarantee (some type of order), use a TreeSet");
+		System.out.println("Notice how it is in alphabetical order.");
 		
 	}
 
