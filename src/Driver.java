@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
@@ -38,35 +39,47 @@ public class Driver {
 		//create a list type and add
 		List<Integer> jack = new ArrayList<Integer>();
 		
+		System.out.print("Adding to list [jack]: ");
 		//do this twice to create duplicates
 		for(int i = 0; i < 10; i++) {
+			System.out.print(i + " ");
 			jack.add(i);
 		}
 		
 		for(int i = 0; i < 10; i++) {
+			System.out.print(i + " ");
 			jack.add(i);
 		}
 		
+		System.out.println("\n\nDone. Notice there are two of each integer in the ArrayList jack now.");
+		
+		
+		
 		//user set to identify unique elements
-		Set<Integer> jackSet;
+		
+		System.out.println("\nUsing a set, we can identify unique values, if we try to add all elements from the ArrayList.");
+		HashSet<Integer> jackSet = new HashSet<Integer>();
+		for(int i = 0; i < jack.size(); i++) {
+			jackSet.add(jack.get(i));
+		}
+		
+		System.out.println(jackSet);
+		
+		System.out.println("This is a unique feature of Sets");
 		
 		//hashmap
-		HashMap<Integer, String> jackHash = new HashMap<Integer, String>();
+		HashMap<String, String> jackHash = new HashMap<String, String>();
 		//populate hashmap
 		String[] myNames = {"Jack", "Brent", "Ethan", "Levi"};
-		int k = 1;
 		for(String s : myNames) {
-			jackHash.put(k, s);
-			k++;
+			jackHash.put(s, "Person");
 		}
 		
 		//treemap
-		TreeMap<Integer, String> jackTree = new TreeMap<Integer, String>();
+		TreeMap<String, String> jackTree = new TreeMap<String, String>();
 		//populate treemap
-		k = 1;
 		for(String s : myNames) {
-			jackTree.put(k, s);
-			k++;
+			jackTree.put(s, "Person");
 		}
 		
 		//now we have idenitical hashmap and treemap.
@@ -74,18 +87,41 @@ public class Driver {
 		//lets try to print them
 		
 		//remember the order names were added:
-		System.out.println("This is the original order:");
-		k = 1;
+		System.out.println("\nThis is the original order:");
 		for(String s : myNames) {
-			System.out.println(k + ". " + s);
-			k++;
+			System.out.println(s);
 		}
 		
-		System.out.println("Here is the hashmap:");
-		System.out.println(jackHash.values());
+		System.out.println("\nHere is the hashmap:");
+		for(String h : jackHash.keySet()) {
+			System.out.println(h);
+		}
 		
-		System.out.println("Here is the treemap:");
-		System.out.println(jackTree.values());
+		
+		System.out.println("\nHere is the treemap:");
+		for(String t : jackTree.keySet()) {
+			System.out.println(t);
+		}
+		
+		System.out.println("\nNow, add another name to both collections");
+		
+		jackTree.put("Carter", "Person");
+		jackHash.put("Carter", "Person");
+		
+		System.out.println("\nHas the order changed?");
+		System.out.println("\nHere is the hashmap:");
+		for(String h : jackHash.keySet()) {
+			System.out.println(h);
+		}
+		
+		
+		System.out.println("\nHere is the treemap:");
+		for(String t : jackTree.keySet()) {
+			System.out.println(t);
+		}
+		
+		
+		System.out.println("\nTo guarantee order, use a TreeSet");
 		
 	}
 
